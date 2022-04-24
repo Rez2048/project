@@ -36,7 +36,7 @@ class GithubAuthController extends Controller
 
                     'email'=>$githubUser->email,
 
-                    'password' => bcrypt(\Str::random(16)),
+                    'password' => bcrypt(\Str::random(20)),
                 ]);
 
                 auth()->LoginUsingId($newUser->id);
