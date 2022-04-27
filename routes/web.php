@@ -33,3 +33,8 @@ Route::get('/auth/github',[GithubAuthController::class , 'redirect'])->name('aut
 Route::get('/auth/github/callback',[GithubAuthController::class , 'callback']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('secret',function ()
+{
+    return 'secret';
+})->middleware(['auth','password.confirm']);
